@@ -29,6 +29,21 @@ Create a controller that passes the request to the handler
 ### Expect a response
 `{"jsonrpc": "2.0", "result": "Pong", "id": "1"}`
 
+where the following mediatr request exists on the server
+
+```
+public class PingRequest : IRequest<string>
+    {
+        internal class Handler : IRequestHandler<PingRequest, string>
+        {
+            public Task<string> Handle(PingRequest request, CancellationToken cancellationToken)
+            {
+                return Task.FromResult("Pong");
+            }
+        }
+    }
+```
+
 ## Further Reading
 See the specs / features for further examples
 
