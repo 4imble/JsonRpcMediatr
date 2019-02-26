@@ -22,18 +22,19 @@ Create a controller that passes the request to the handler
     }
 ```
 
-## Reading
-See the specs / features for further examples
-
-and the official spec
-https://www.jsonrpc.org/specification#examples
-
 ## Form a valid RPC request 
 ### Example
 `{"jsonrpc": "2.0", "method": "ping", "id": "1"}`
 
 ### Expect a response
 `{"jsonrpc": "2.0", "result": "Pong", "id": "1"}`
+
+## Further Reading
+See the specs / features for further examples
+
+and the official spec
+https://www.jsonrpc.org/specification#examples
+
 
 ### Here's a typescript helper method for convenience)
 ```
