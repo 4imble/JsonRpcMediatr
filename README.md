@@ -71,8 +71,11 @@ and the official spec
 https://www.jsonrpc.org/specification#examples
 
 
-### Here's a typescript helper method for convenience)
+### Here's a typescript helper method (server.ts) for convenience
+Something like this can help you form the correct RPC to send.
 ```
+
+//ServerTs
 async jsonRpc(method, params?): Promise<any> {
     var guid = Guid.NewGuid();
 
@@ -101,3 +104,11 @@ async jsonRpc(method, params?): Promise<any> {
     return response.result;
   }
   ```
+  Used like so :
+
+```
+    let stuffs = await this.server.jsonRpc("GetAllStuff");
+    // OR  
+    let model = { Id: 21 };
+    let specificStuff = this.server.jsonRpc("GetSpecificStuffById", { "Model": model });
+```
