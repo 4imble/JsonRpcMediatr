@@ -22,6 +22,23 @@ Create a controller that passes the request to the handler
     }
 ```
 
+## Register with IoC
+```
+    public static void RegisterJsonRpcHandler(this Container container)
+    {
+        var knownType = typeof(PingRequest);
+
+        var registrations =
+            from type in knownType.Assembly.GetExportedTypes()
+            where type.Namespace == knownType.Namespace
+            where type.GetInterfaces().Any(x => x == typeof(IBaseRequest))
+            select type;
+
+        container.RegisterSingleton<IJsonRpcRequestHandler>(
+            () => new JsonRpcRequestHandler(container.GetInstance<IMediator>(), registrations));
+    }
+```
+
 ## Form a valid RPC request 
 ### Example
 `{"jsonrpc": "2.0", "method": "ping", "id": "1"}`
