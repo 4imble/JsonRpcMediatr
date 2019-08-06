@@ -29,14 +29,14 @@ Create a controller that passes the request to the handler
         // MediatR Request
         var knownType = typeof(PingRequest);
 
-        // Register all requests for application
+        // Get all requests for application
         var registrations =
             from type in knownType.Assembly.GetExportedTypes()
             where type.Namespace == knownType.Namespace
             where type.GetInterfaces().Any(x => x == typeof(IBaseRequest))
             select type;
         
-        // Register handler
+        // Register handler with requests
         container.RegisterSingleton<IJsonRpcRequestHandler>(
             () => new JsonRpcRequestHandler(container.GetInstance<IMediator>(), registrations));
     }
