@@ -10,6 +10,7 @@ using SimpleInjector.Lifestyles;
 using TechTalk.SpecFlow;
 using _4imble.JsonRpcMediatr.Specs.Helpers;
 using _4imble.JsonRpcMediatr.Specs.TestRequests;
+using _4imble.Mediatr.JsonRpc.Specs.TestClasses;
 
 namespace _4imble.JsonRpcMediatr.Specs.Configuration
 {
@@ -31,7 +32,7 @@ namespace _4imble.JsonRpcMediatr.Specs.Configuration
                 select type;
 
             ApplicationContext.Container.RegisterSingleton<IJsonRpcRequestHandler>(() =>
-                new JsonRpcRequestHandler(ApplicationContext.Container.GetInstance<IMediator>(), registrations, new NoOpJsonRpcRequestLogger()));
+                new JsonRpcRequestHandler(ApplicationContext.Container.GetInstance<IMediator>(), registrations, new TestJsonRpcLogger()));
 
             ApplicationContext.Container.Verify();
         }

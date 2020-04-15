@@ -38,9 +38,14 @@ Create a controller that passes the request to the handler
         
         // Register handler with requests
         container.RegisterSingleton<IJsonRpcRequestHandler>(
-            () => new JsonRpcRequestHandler(container.GetInstance<IMediator>(), registrations));
+            () => new JsonRpcRequestHandler(container.GetInstance<IMediator>(), registrations, new NoOpJsonRpcRequestLogger()));
     }
 ```
+
+## New in 1.0.3
+### Logging
+You can no get it to log the requests that get handled.
+Implement the IJsonRpcRequestLogger interface and pass it to IoC instead of the NoOpJsonRpcRequestLogger
 
 ## Form a valid RPC request 
 ### Example

@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using TechTalk.SpecFlow;
 using _4imble.JsonRpcMediatr.RequestsResponses;
 using _4imble.JsonRpcMediatr.Specs.Helpers;
+using Newtonsoft.Json.Linq;
 
 namespace _4imble.JsonRpcMediatr.Specs.Steps
 {
@@ -39,5 +40,18 @@ namespace _4imble.JsonRpcMediatr.Specs.Steps
         {
             TestContext.Recall<int>("Result").Should().Be(result);
         }
+
+        [Then(@"it should log the following details")]
+        public void ThenItShouldLogTheFollowingDetails(dynamic expected)
+        {
+            string expectedMethod = expected.Method.ToUpper();
+            string expectedParams = expected.Params;
+
+            var log = TestContext.Recall<JsonRpcRequest>("Log");
+            log.Method.ToUpper().Should().Be(expectedMethod);
+            log.Params.Should().BeEquivalentTo(JsonConvert.DeserializeObject<JObject>(expectedParams));
+            log.ExecutionTime.Should().NotBe(0);
+        }
+
     }
 }

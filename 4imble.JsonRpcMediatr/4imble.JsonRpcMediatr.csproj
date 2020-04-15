@@ -4,6 +4,11 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>_4imble.JsonRpcMediatr</RootNamespace>
     <AssemblyName>4imble.JsonRpcMediatr</AssemblyName>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/4imble/JsonRpcMediatr</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/4imble/JsonRpcMediatr</RepositoryUrl>
+    <Description>A way to fire of Mediatr requests via RPCs</Description>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
