@@ -80,14 +80,14 @@ namespace _4imble.Mediatr.JsonRpc.Specs.Features
         {
 #line 4
 #line hidden
-            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "IsAuthenticated"});
-            table16.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Gimble",
                         "false"});
 #line 5
- testRunner.Given("I am the following user", ((string)(null)), table16, "Given ");
+ testRunner.Given("I am the following user", ((string)(null)), table19, "Given ");
 #line hidden
         }
         
@@ -120,25 +120,25 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                             "Identifier",
                             "Json"});
-                table17.AddRow(new string[] {
+                table20.AddRow(new string[] {
                             "Request1",
                             "{\"method\": \"subtract\", \"id\": 1}"});
 #line 10
- testRunner.Given("I have the following RPC request object", ((string)(null)), table17, "Given ");
+ testRunner.Given("I have the following RPC request object", ((string)(null)), table20, "Given ");
 #line hidden
 #line 13
  testRunner.When("I send the request with identifier \'Request1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                             "Json"});
-                table18.AddRow(new string[] {
+                table21.AddRow(new string[] {
                             "{\"jsonrpc\": \"2.0\", \"error\": {\"code\": -32600, \"message\": \"Invalid Request\"}, \"id\":" +
                                 " 1}"});
 #line 14
- testRunner.Then("it should respond with the following response error", ((string)(null)), table18, "Then ");
+ testRunner.Then("it should respond with the following response error", ((string)(null)), table21, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -173,25 +173,25 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                             "Identifier",
                             "Json"});
-                table19.AddRow(new string[] {
+                table22.AddRow(new string[] {
                             "Request1",
                             "{\"jsonrpc\": \"2.0\", \"method\": \"foobar, \"params\": \"bar\", \"baz]"});
 #line 19
- testRunner.Given("I have the following RPC request object", ((string)(null)), table19, "Given ");
+ testRunner.Given("I have the following RPC request object", ((string)(null)), table22, "Given ");
 #line hidden
 #line 22
  testRunner.When("I send the request with identifier \'Request1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                             "Json"});
-                table20.AddRow(new string[] {
+                table23.AddRow(new string[] {
                             "{\"jsonrpc\": \"2.0\", \"error\": {\"code\": -32700, \"message\": \"Parse error\"}, \"id\": nul" +
                                 "l}"});
 #line 23
- testRunner.Then("it should respond with the following response error", ((string)(null)), table20, "Then ");
+ testRunner.Then("it should respond with the following response error", ((string)(null)), table23, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -226,25 +226,25 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                             "Identifier",
                             "Json"});
-                table21.AddRow(new string[] {
+                table24.AddRow(new string[] {
                             "Request1",
                             "{\"jsonrpc\": \"2.0\", \"method\": 1 }"});
 #line 28
- testRunner.Given("I have the following RPC request object", ((string)(null)), table21, "Given ");
+ testRunner.Given("I have the following RPC request object", ((string)(null)), table24, "Given ");
 #line hidden
 #line 31
  testRunner.When("I send the request with identifier \'Request1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                             "Json"});
-                table22.AddRow(new string[] {
+                table25.AddRow(new string[] {
                             "{\"jsonrpc\": \"2.0\", \"error\": {\"code\": -32600, \"message\": \"Invalid Request\"}, \"id\":" +
                                 " null}"});
 #line 32
- testRunner.Then("it should respond with the following response error", ((string)(null)), table22, "Then ");
+ testRunner.Then("it should respond with the following response error", ((string)(null)), table25, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -279,25 +279,25 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                             "Identifier",
                             "Json"});
-                table23.AddRow(new string[] {
+                table26.AddRow(new string[] {
                             "Request1",
                             "{\"jsonrpc\": \"2.0\", \"method\": \"foobar\", \"id\": \"1\"}"});
 #line 37
- testRunner.Given("I have the following RPC request object", ((string)(null)), table23, "Given ");
+ testRunner.Given("I have the following RPC request object", ((string)(null)), table26, "Given ");
 #line hidden
 #line 40
  testRunner.When("I send the request with identifier \'Request1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                             "Json"});
-                table24.AddRow(new string[] {
+                table27.AddRow(new string[] {
                             "{\"jsonrpc\": \"2.0\", \"error\": {\"code\": -32601, \"message\": \"Method not found\"}, \"id\"" +
                                 ": \"1\"}"});
 #line 41
- testRunner.Then("it should respond with the following response error", ((string)(null)), table24, "Then ");
+ testRunner.Then("it should respond with the following response error", ((string)(null)), table27, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -332,25 +332,25 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                             "Identifier",
                             "Json"});
-                table25.AddRow(new string[] {
+                table28.AddRow(new string[] {
                             "Request1",
                             "{\"jsonrpc\": \"2.0\", \"method\": \"subtract\", \"params\": [42, 23], \"id\": 1}"});
 #line 46
- testRunner.Given("I have the following RPC request object", ((string)(null)), table25, "Given ");
+ testRunner.Given("I have the following RPC request object", ((string)(null)), table28, "Given ");
 #line hidden
 #line 49
  testRunner.When("I send the request with identifier \'Request1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                             "Json"});
-                table26.AddRow(new string[] {
+                table29.AddRow(new string[] {
                             "{\"jsonrpc\": \"2.0\", \"error\": {\"code\": -32700, \"message\": \"Parse error\"}, \"id\": nul" +
                                 "l }"});
 #line 50
- testRunner.Then("it should respond with the following response error", ((string)(null)), table26, "Then ");
+ testRunner.Then("it should respond with the following response error", ((string)(null)), table29, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

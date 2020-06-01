@@ -18,10 +18,11 @@ namespace _4imble.JsonRpcMediatr
         readonly IEnumerable<Type> requests;
         readonly IJsonRpcRequestLogger requestLogger;
 
-        JsonRpcError PARSE_ERROR = new JsonRpcError { Code = -32700, Message = "Parse error" };
+        JsonRpcError USER_NOT_AUTHORIZED = new JsonRpcError { Code = -00001, Message = "User not authorized" };
+        JsonRpcError SERVER_ERROR = new JsonRpcError { Code = -32000, Message = "Server error" };
         JsonRpcError INVALID_REQUEST = new JsonRpcError { Code = -32600, Message = "Invalid Request" };
         JsonRpcError METHOD_NOT_FOUND = new JsonRpcError { Code = -32601, Message = "Method not found" };
-        JsonRpcError USER_NOT_AUTHORIZED = new JsonRpcError { Code = -00001, Message = "User not authorized" };
+        JsonRpcError PARSE_ERROR = new JsonRpcError { Code = -32700, Message = "Parse error" };
 
         public JsonRpcRequestHandler(IMediator mediator, IEnumerable<Type> requests, IJsonRpcRequestLogger requestLogger)
         {
@@ -68,19 +69,38 @@ namespace _4imble.JsonRpcMediatr
             if (request.Params != null)
                 JsonConvert.PopulateObject(request.Params.ToString(), mediatorRequest);
 
+            dynamic result = null;
+            var hasError = false;
             var sw = Stopwatch.StartNew();
-            var result = await mediator.Send(mediatorRequest);
+            try
+            {
+                result = await mediator.Send(mediatorRequest);
+            }
+            catch (Exception ex)
+            {
+                hasError = true;
+            }
+
             sw.Stop();
+            request.ExecutionTime = sw.Elapsed;
 
-            request.ExecutionTime = (int)sw.ElapsedMilliseconds;
+            Log(request);
 
+            if (hasError)
+                return new JsonRpcResponseError { Error = SERVER_ERROR, Id = request.Id };
+
+            return await Task.FromResult(new JsonRpcResponseSuccess { Result = result, Id = request.Id });
+        }
+
+        private void Log(JsonRpcRequest request)
+        {
             try
             {
                 requestLogger.Log(request);
             }
-            catch (Exception){}
-
-            return await Task.FromResult(new JsonRpcResponseSuccess { Result = result, Id = request.Id });
+            catch (Exception)
+            {
+            }
         }
     }
 }

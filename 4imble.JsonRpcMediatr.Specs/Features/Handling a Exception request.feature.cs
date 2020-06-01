@@ -20,22 +20,22 @@ namespace _4imble.Mediatr.JsonRpc.Specs.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Logging a RPC request")]
-    public partial class LoggingARPCRequestFeature
+    [NUnit.Framework.DescriptionAttribute("Handling requests that throw unhandled errors")]
+    public partial class HandlingRequestsThatThrowUnhandledErrorsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "Logging a RPC request.feature"
+#line 1 "Handling a Exception request.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Logging a RPC request", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Handling requests that throw unhandled errors", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -73,28 +73,13 @@ namespace _4imble.Mediatr.JsonRpc.Specs.Features
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void FeatureBackground()
-        {
-#line 3
-#line hidden
-            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name",
-                        "IsAuthenticated"});
-            table16.AddRow(new string[] {
-                        "Gimble",
-                        "false"});
-#line 4
- testRunner.Given("I am the following user", ((string)(null)), table16, "Given ");
-#line hidden
-        }
-        
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Logging a Request with named parameters")]
-        public virtual void LoggingARequestWithNamedParameters()
+        [NUnit.Framework.DescriptionAttribute("Request with unhandled error")]
+        public virtual void RequestWithUnhandledError()
         {
             string[] tagsOfScenario = ((string[])(null));
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Logging a Request with named parameters", null, ((string[])(null)));
-#line 8
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Request with unhandled error", null, ((string[])(null)));
+#line 3
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -114,30 +99,34 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 3
-this.FeatureBackground();
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name",
+                            "IsAuthenticated"});
+                table2.AddRow(new string[] {
+                            "Gimble",
+                            "false"});
+#line 4
+ testRunner.Given("I am the following user", ((string)(null)), table2, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                             "Identifier",
                             "Json"});
-                table17.AddRow(new string[] {
-                            "Request1",
-                            "{\"jsonrpc\": \"2.0\", \"method\": \"subtract\", \"params\": { \"left\": 42, \"right\": 23}, \"i" +
-                                "d\": 1}"});
-#line 9
- testRunner.Given("I have the following RPC request object", ((string)(null)), table17, "Given ");
+                table3.AddRow(new string[] {
+                            "Request201",
+                            "{\"jsonrpc\": \"2.0\", \"method\": \"exception\", \"id\": 201}"});
+#line 7
+ testRunner.Given("I have the following RPC request object", ((string)(null)), table3, "Given ");
 #line hidden
-#line 12
- testRunner.When("I send the request with identifier \'Request1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 10
+ testRunner.When("I send the request with identifier \'Request201\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Method",
-                            "Params"});
-                table18.AddRow(new string[] {
-                            "Subtract",
-                            "{ \"left\": 42, \"right\": 23 }"});
-#line 13
- testRunner.Then("it should log the following details", ((string)(null)), table18, "Then ");
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Json"});
+                table4.AddRow(new string[] {
+                            "{\"jsonrpc\": \"2.0\", \"error\": {\"code\": -32000 , \"message\": \"Server error\"}, \"id\": 2" +
+                                "01}"});
+#line 11
+ testRunner.Then("it should respond with the following response error", ((string)(null)), table4, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

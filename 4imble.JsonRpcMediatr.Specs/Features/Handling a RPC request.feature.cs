@@ -77,14 +77,14 @@ namespace _4imble.Mediatr.JsonRpc.Specs.Features
         {
 #line 3
 #line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "IsAuthenticated"});
-            table2.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "Gimble",
                         "false"});
 #line 4
- testRunner.Given("I am the following user", ((string)(null)), table2, "Given ");
+ testRunner.Given("I am the following user", ((string)(null)), table5, "Given ");
 #line hidden
         }
         
@@ -117,24 +117,24 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                             "Identifier",
                             "Json"});
-                table3.AddRow(new string[] {
+                table6.AddRow(new string[] {
                             "Request1",
                             "{\"jsonrpc\": \"2.0\", \"method\": \"ping\", \"id\": \"1\"}"});
 #line 9
- testRunner.Given("I have the following RPC request object", ((string)(null)), table3, "Given ");
+ testRunner.Given("I have the following RPC request object", ((string)(null)), table6, "Given ");
 #line hidden
 #line 12
  testRunner.When("I send the request with identifier \'Request1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                             "Json"});
-                table4.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "{\"jsonrpc\": \"2.0\", \"result\": \"Pong\", \"id\": \"1\"}"});
 #line 13
- testRunner.Then("it should respond with the following response", ((string)(null)), table4, "Then ");
+ testRunner.Then("it should respond with the following response", ((string)(null)), table7, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -169,25 +169,25 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                             "Identifier",
                             "Json"});
-                table5.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "Request1",
                             "{\"jsonrpc\": \"2.0\", \"method\": \"subtract\", \"params\": { \"left\": 42, \"right\": 23}, \"i" +
                                 "d\": 1}"});
 #line 18
- testRunner.Given("I have the following RPC request object", ((string)(null)), table5, "Given ");
+ testRunner.Given("I have the following RPC request object", ((string)(null)), table8, "Given ");
 #line hidden
 #line 21
  testRunner.When("I send the request with identifier \'Request1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                             "Json"});
-                table6.AddRow(new string[] {
+                table9.AddRow(new string[] {
                             "{\"jsonrpc\": \"2.0\", \"result\": 19, \"id\": 1}"});
 #line 22
- testRunner.Then("it should respond with the following response", ((string)(null)), table6, "Then ");
+ testRunner.Then("it should respond with the following response", ((string)(null)), table9, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
