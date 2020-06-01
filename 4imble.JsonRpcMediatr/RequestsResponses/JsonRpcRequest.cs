@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
+using System;
 
 namespace _4imble.JsonRpcMediatr.RequestsResponses
 {
@@ -8,6 +9,6 @@ namespace _4imble.JsonRpcMediatr.RequestsResponses
         public string Method { get; set; }
         public JObject Params { get; set; }
         public string Id { get; set; }
-        public int ExecutionTime { get; set; }
+        public TimeSpan ExecutionTime { get; set; }
     }
 }

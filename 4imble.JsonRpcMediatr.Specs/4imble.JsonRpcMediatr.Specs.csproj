@@ -215,6 +215,7 @@
     <Compile Include="Configuration\TestIocConfiguration.cs" />
     <Compile Include="Helpers\TestContext.cs" />
     <Compile Include="TestClasses\TestJsonRpcLogger.cs" />
+    <Compile Include="TestRequests\ExceptionRequest.cs" />
     <Compile Include="TestRequests\PingRequest.cs" />
     <Compile Include="TestRequests\SecuredRequest.cs" />
     <Compile Include="TestRequests\SubtractRequest.cs" />
@@ -227,6 +228,9 @@
     </None>
     <None Include="Features\.Fake Requests\Subtract Request.feature">
       <LastGenOutput>Subtract Request1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Handling a Exception request.feature">
+      <LastGenOutput>Handling a RPC request1.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Handling a RPC request.feature">
       <LastGenOutput>Handling a RPC request1.feature.cs</LastGenOutput>

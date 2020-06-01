@@ -50,7 +50,7 @@ namespace _4imble.JsonRpcMediatr.Specs.Steps
             var log = TestContext.Recall<JsonRpcRequest>("Log");
             log.Method.ToUpper().Should().Be(expectedMethod);
             log.Params.Should().BeEquivalentTo(JsonConvert.DeserializeObject<JObject>(expectedParams));
-            log.ExecutionTime.Should().NotBe(0);
+            log.ExecutionTime.TotalMilliseconds.Should().NotBe(0);
         }
 
     }
