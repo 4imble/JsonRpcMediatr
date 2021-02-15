@@ -2,7 +2,7 @@
 using System.Dynamic;
 using System.Linq;
 
-namespace _4imble.JsonRpcMediatr.Specs.Helpers
+namespace _4imble.JsonRpcMediatr.Tests.Helpers
 {
     public static class TestContext
     {

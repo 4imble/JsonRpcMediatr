@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>_4imble.JsonRpcMediatr.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Features\.Fake Requests\Ping Request.feature" />
+    <None Include="Features\.Fake Requests\Subtract Request.feature" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dynamitey" Version="2.0.10.189" />
+    <PackageReference Include="FluentAssertions" Version="5.10.3" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="NUnit" Version="3.13.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+    <PackageReference Include="SimpleInjector" Version="5.2.1" />
+    <PackageReference Include="SpecFlow" Version="3.6.23" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.6.23" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.6.23" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\4imble.JsonRpcMediatr\4imble.JsonRpcMediatr.csproj" />
+  </ItemGroup>
+
+</Project>

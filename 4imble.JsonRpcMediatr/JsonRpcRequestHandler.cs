@@ -76,7 +76,7 @@ namespace _4imble.JsonRpcMediatr
 
             try
             {
-                requestLogger.Log(request);
+                requestLogger.Log(request, mediatorRequestType);
             }
             catch (Exception){}
 

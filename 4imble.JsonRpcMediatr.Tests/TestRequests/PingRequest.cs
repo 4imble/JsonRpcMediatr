@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using MediatR;
 
 // ReSharper disable once CheckNamespace
-namespace _4imble.JsonRpcMediatr.Specs.TestRequests
+namespace _4imble.JsonRpcMediatr.Tests.TestRequests
 {
     public class PingRequest : IRequest<string>
     {

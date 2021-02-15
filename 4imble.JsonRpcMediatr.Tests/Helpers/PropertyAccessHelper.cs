@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _4imble.JsonRpcMediatr.Specs.Helpers
+namespace _4imble.JsonRpcMediatr.Tests.Helpers
 {
     public class PropertyAccessHelper
     {

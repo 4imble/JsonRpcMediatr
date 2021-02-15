@@ -1,6 +1,6 @@
 ﻿using System.Security.Principal;
 
-namespace _4imble.JsonRpcMediatr.Specs.TestClasses
+namespace _4imble.JsonRpcMediatr.Tests.TestClasses
 {
     public class TestIdentity: IIdentity
     {

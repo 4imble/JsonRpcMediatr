@@ -8,11 +8,12 @@ using MediatR.Pipeline;
 using SimpleInjector;
 using SimpleInjector.Lifestyles;
 using TechTalk.SpecFlow;
-using _4imble.JsonRpcMediatr.Specs.Helpers;
-using _4imble.JsonRpcMediatr.Specs.TestRequests;
+using _4imble.JsonRpcMediatr.Tests.Helpers;
+using _4imble.JsonRpcMediatr.Tests.TestRequests;
 using _4imble.Mediatr.JsonRpc.Specs.TestClasses;
+using _4imble.JsonRpcMediatr.Tests.Configuration;
 
-namespace _4imble.JsonRpcMediatr.Specs.Configuration
+namespace _4imble.JsonRpcMediatr.Test.Configuration
 {
     [Binding]
     public class SpecFlowTestHooks

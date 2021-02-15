@@ -1,7 +1,8 @@
-﻿using SimpleInjector;
+﻿using _4imble.JsonRpcMediatr.Test.Configuration;
+using SimpleInjector;
 using SimpleInjector.Lifestyles;
 
-namespace _4imble.JsonRpcMediatr.Specs.Configuration
+namespace _4imble.JsonRpcMediatr.Tests.Configuration
 {
     public class TestIocConfiguration
     {

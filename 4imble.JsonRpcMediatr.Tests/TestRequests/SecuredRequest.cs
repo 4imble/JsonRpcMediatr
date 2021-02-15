@@ -4,7 +4,7 @@ using MediatR;
 using _4imble.JsonRpcMediatr.Attributes;
 
 // ReSharper disable once CheckNamespace
-namespace _4imble.JsonRpcMediatr.Specs.TestRequests
+namespace _4imble.JsonRpcMediatr.Tests.TestRequests
 {
     [Secured]
     public class SecuredRequest : IRequest

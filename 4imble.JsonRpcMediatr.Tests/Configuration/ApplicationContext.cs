@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SimpleInjector;
+﻿using SimpleInjector;
 
-namespace _4imble.JsonRpcMediatr.Specs.Configuration
+namespace _4imble.JsonRpcMediatr.Test.Configuration
 {
     public static class ApplicationContext
     {

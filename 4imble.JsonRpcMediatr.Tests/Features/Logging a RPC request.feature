@@ -11,5 +11,5 @@ Scenario: Logging a Request with named parameters
 		| Request1   | {"jsonrpc": "2.0", "method": "subtract", "params": { "left": 42, "right": 23}, "id": 1} |
 	When I send the request with identifier 'Request1'
 	Then it should log the following details
-		| Method   | Params                      |
-		| Subtract | { "left": 42, "right": 23 } |
+		| Method   | Params                      | RequestType     |
+		| Subtract | { "left": 42, "right": 23 } | SubtractRequest |

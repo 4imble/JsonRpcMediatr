@@ -3,11 +3,11 @@ using System.Security.Claims;
 using MediatR;
 using Newtonsoft.Json;
 using TechTalk.SpecFlow;
-using _4imble.JsonRpcMediatr.Specs.Configuration;
-using _4imble.JsonRpcMediatr.Specs.Helpers;
-using _4imble.JsonRpcMediatr.Specs.TestRequests;
+using _4imble.JsonRpcMediatr.Tests.Helpers;
+using _4imble.JsonRpcMediatr.Tests.TestRequests;
+using _4imble.JsonRpcMediatr.Test.Configuration;
 
-namespace _4imble.JsonRpcMediatr.Specs.Steps
+namespace _4imble.JsonRpcMediatr.Tests.Steps
 {
     [Binding]
     public class WhenSteps
@@ -48,7 +48,7 @@ namespace _4imble.JsonRpcMediatr.Specs.Steps
 
 
         [When(@"I send a '(.*)' request with parameters")]
-        public void GivenISendARequestWithParameters(string requestName, dynamic parameterData)
+        public void GivenISendARequestWithParameters(string requestName, Table parameterData)
         {
             var knownType = typeof(PingRequest);
             var mediatorRequestType =
@@ -56,7 +56,7 @@ namespace _4imble.JsonRpcMediatr.Specs.Steps
 
             dynamic mediatorRequest = Activator.CreateInstance(mediatorRequestType);
 
-            var parameters = PropertyAccessHelper.TryGetValue<string>(() => parameterData.Parameters);
+            var parameters = parameterData.GetTableValue<string>("Parameters");
             if (!string.IsNullOrEmpty(parameters))
                 JsonConvert.PopulateObject(parameters, mediatorRequest);
 
